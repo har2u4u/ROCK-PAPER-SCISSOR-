@@ -1,0 +1,51 @@
+import random
+cchoice=["rock","paper","scissor"]
+while True:
+    print("rock paper scissor game")
+    uwin,cwin=0,0
+    for i in range(1,6):
+        print("round",i,"start:")
+        print("please selct option:")
+        print("1.rock","2.paper","3.scissor")
+        ychoice=int(input())
+        if ychoice==1:
+            print("you selct rock")
+            ychoice="rock"
+        elif ychoice==2:
+            print("you select paper")
+            ychoice="paper"
+        elif ychoice==3:
+            print("ypu select scisor")
+            ychoice="scissor"
+        else:
+            print("invalid")
+            break
+        computerchoice=random.choice(cchoice)
+        print("computer select:",computerchoice)
+        if ychoice==computerchoice:
+            uwin+=1
+            cwin+=1
+            print("rond drwn")
+        elif(ychoice=="paper" and computerchoice=="rock") or (ychoice=="rock" and computerchoice=="scissor") or (ychoice=="scissor" and computerchoice=="paper"):
+            uwin+=1
+            print("u win rund")
+        else:
+            cwin+=1
+            print("Com win riund")
+    if uwin>cwin:
+        print("U WIN")
+        print("score is:","your score:",uwin,"computer score:",cwin,sep=" ")
+    elif cwin>uwin:
+        print("comp win")
+        print("score is:","your score:",uwin,"computer score:",cwin,sep=" ")
+    else:
+        print("match drea")
+        print("score is:","your score:",uwin,"computer score:",cwin,sep=" ")
+    userchoice=input("want play again?(Yes/Exit)")
+    if userchoice=='yes' or userchoice=="YES" or userchoice=='Yes':
+        continue
+    else:
+        break
+
+
+
